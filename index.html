@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="module">
+        import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js'
+    </script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+    排序算法练习 sort：
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello world'
+            },
+            created() {
+                var arr = ['General','Tom','Bob','John','Army'];
+                var resArr = arr.sort()
+                console.log('resArr: ', resArr)
+                var arr2 = [30,10,111,35,1899,50,45];
+                var resArr2 = arr2.sort((a, b) => {
+                    return a - b    // 升序
+                })
+                /**
+                 * resArr:  (5) ["Army", "Bob", "General", "John", "Tom"]
+                 * index.html:32 resArr:  (7) [10, 30, 35, 45, 50, 111, 1899]
+                 */
+                console.log('resArr: ', resArr2)                
+            }
+        })
+    </script>
+</body>
+</html>
